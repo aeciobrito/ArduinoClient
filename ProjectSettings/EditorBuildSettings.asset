@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Controller.unity
     guid: d73f486415089e44fa140f80494fcb76
+  - enabled: 1
+    path: Assets/Scenes/ControllerVideo.unity
+    guid: 0db7a70e8e251d84d94e02a29e92455b
+  - enabled: 1
+    path: Assets/Scenes/VuforiaCamera.unity
+    guid: 03be8023921f5214cb0b76fe2efaeff9
   m_configObjects: {}
