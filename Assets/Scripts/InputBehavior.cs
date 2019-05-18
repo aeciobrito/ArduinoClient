@@ -7,7 +7,7 @@ public class InputBehavior : MonoBehaviour
 
     private bool anyKeyDown = false;
 
-    #if UNITY_EDITOR || UNITY_STANDALONE
+#if UNITY_EDITOR || UNITY_STANDALONE
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -37,7 +37,7 @@ public class InputBehavior : MonoBehaviour
             SendInputs.Instance.SendPacket("S");
         }
     }
-    #endif
+#endif
     public void TouchButtonInputs(string key)
     {
         SendInputs.Instance.SendPacket(key);

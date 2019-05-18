@@ -4,7 +4,7 @@
 //MyVersion
 //Car control variables
 int incomingByte = 0;
-int speedCar = 400;//0 to 1023
+int speedCar = 800;//0 to 1023
 int speed_Coeff = 3; //aux reduce turn speed
 
 #define ENA   14          // Enable/speed motors Right        GPIO14(D5)

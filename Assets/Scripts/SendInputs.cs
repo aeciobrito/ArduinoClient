@@ -19,9 +19,9 @@ public class SendInputs : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] int _port; 
+    [SerializeField] int _port;
     [SerializeField] string _ip;
-    
+
     void Start()
     {
         //byte[] aux = Encoding.ASCII.GetBytes(PlayerPrefs.GetString("IP"));
