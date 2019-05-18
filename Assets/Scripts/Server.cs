@@ -19,6 +19,8 @@ public class Server : MonoBehaviour
     private const int port = 1999;
     private bool stop = false;
     private IPAddress myIP;
+    [Range(1,100)]
+    [SerializeField] int imageQuality = 50;
     [SerializeField] Text ipText;
 
     private List<TcpClient> clients = new List<TcpClient>();
@@ -30,6 +32,7 @@ public class Server : MonoBehaviour
     {
         Application.runInBackground = true;
         ipText.text = GetLocalIPAddress();
+        imageQuality = PlayerPrefs.GetInt("CamQyalitty", 50);
         Debug.Log(GetLocalIPAddress());
         //Start WebCam coroutine
         StartCoroutine(initAndWaitForCamImage());
@@ -115,7 +118,7 @@ public class Server : MonoBehaviour
             //Wait for End of frame
             yield return endOfFrame;
             currentTexture.SetPixels(cameraFeed.GetImage().GetPixels());
-            byte[] pngBytes = currentTexture.EncodeToJPG(50);
+            byte[] pngBytes = currentTexture.EncodeToJPG(imageQuality);
             //Fill total byte length to send. Result is stored in frameBytesLength
             byteLengthToFrameByteArray(pngBytes.Length, frameBytesLength);
 
