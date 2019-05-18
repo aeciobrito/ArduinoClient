@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject _mainMenu, _clientMenu, _serverMenu;
     private GameObject _currentMenu;
 
-    // Use this for initialization
     void Start()
     {
         _mainMenu.SetActive(true);
