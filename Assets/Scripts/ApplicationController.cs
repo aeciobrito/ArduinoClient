@@ -5,14 +5,16 @@ using System;
 
 public class ApplicationController : MonoBehaviour
 {
-    [SerializeField] InputField ipInputFiled, portInputField, _cameraInputField;
+    [SerializeField] InputField _ipInputFiled, _portInputField, _cameraInputField;
+    [SerializeField] Slider _qualitySlider;
 
     // Use this for initialization
     void Start()
     {
-        ipInputFiled.text = PlayerPrefs.GetString("IP", "192.168.1.100");
-        portInputField.text = PlayerPrefs.GetInt("Port", 2000).ToString();
+        _ipInputFiled.text = PlayerPrefs.GetString("IP", "192.168.1.100");
+        _portInputField.text = PlayerPrefs.GetInt("Port", 2000).ToString();
         _cameraInputField.text = PlayerPrefs.GetString("IPCam", "192.168.1.100");
+        _qualitySlider.value = PlayerPrefs.GetInt("CamQuality", 50);
     }
 
     public void LoadScene(string sceneName)
@@ -24,12 +26,13 @@ public class ApplicationController : MonoBehaviour
 
     public void SaveInputFileds()
     {
-        if (ipInputFiled.text == "" || portInputField.text == "")
+        if (_ipInputFiled.text == "" || _portInputField.text == "")
             return;
 
-        PlayerPrefs.SetString("IP", ipInputFiled.text);
-        PlayerPrefs.SetInt("Port", Convert.ToInt32(portInputField.text));
+        PlayerPrefs.SetString("IP", _ipInputFiled.text);
+        PlayerPrefs.SetInt("Port", Convert.ToInt32(_portInputField.text));
         PlayerPrefs.SetString("IPCam", _cameraInputField.text);
+        PlayerPrefs.SetInt("CamQuality", (int)_qualitySlider.value);
     }
 
     public void Quit()
