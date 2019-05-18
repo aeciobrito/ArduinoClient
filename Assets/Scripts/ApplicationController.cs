@@ -20,7 +20,6 @@ public class ApplicationController : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SaveInputFileds();
-
         SceneManager.LoadScene(sceneName);
     }
 

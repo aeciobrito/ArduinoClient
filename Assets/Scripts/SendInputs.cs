@@ -24,9 +24,6 @@ public class SendInputs : MonoBehaviour
 
     void Start()
     {
-        //byte[] aux = Encoding.ASCII.GetBytes(PlayerPrefs.GetString("IP"));
-        //_ip = Encoding.ASCII.GetString(aux);
-        //_ip = _ip.Substring(0, _ip.Length);
         _ip = PlayerPrefs.GetString("IP");
         _port = PlayerPrefs.GetInt("Port");
     }

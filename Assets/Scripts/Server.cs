@@ -35,12 +35,12 @@ public class Server : MonoBehaviour
         imageQuality = PlayerPrefs.GetInt("CamQyalitty", 50);
         Debug.Log(GetLocalIPAddress());
         //Start WebCam coroutine
-        StartCoroutine(initAndWaitForCamImage());
+        StartCoroutine(InitAndWaitForCamImage());
     }
 
 
     //Converts the data size to byte array and put result to the fullBytes array
-    void byteLengthToFrameByteArray(int byteLength, byte[] fullBytes)
+    void ByteLengthToFrameByteArray(int byteLength, byte[] fullBytes)
     {
         //Clear old data
         Array.Clear(fullBytes, 0, fullBytes.Length);
@@ -51,15 +51,14 @@ public class Server : MonoBehaviour
     }
 
     //Converts the byte array to the data size and returns the result
-    int frameByteArrayToByteLength(byte[] frameBytesLength)
+    int FrameByteArrayToByteLength(byte[] frameBytesLength)
     {
         int byteLength = BitConverter.ToInt32(frameBytesLength, 0);
         return byteLength;
     }
 
-    IEnumerator initAndWaitForCamImage()
+    IEnumerator InitAndWaitForCamImage()
     {
-        // Connect to the server
         listner = new TcpListener(IPAddress.Any, port);
 
         listner.Start();
@@ -71,13 +70,12 @@ public class Server : MonoBehaviour
         currentTexture = new Texture2D(cameraFeed.getWidth(), cameraFeed.getHeight());
         Debug.Log("got Cam Image");
         //Start sending coroutine
-        StartCoroutine(senderCOR());
+        StartCoroutine(SenderCOR());
     }
 
     WaitForEndOfFrame endOfFrame = new WaitForEndOfFrame();
-    IEnumerator senderCOR()
+    IEnumerator SenderCOR()
     {
-
         bool isConnected = false;
         TcpClient client = null;
         NetworkStream stream = null;
@@ -120,7 +118,7 @@ public class Server : MonoBehaviour
             currentTexture.SetPixels(cameraFeed.GetImage().GetPixels());
             byte[] pngBytes = currentTexture.EncodeToJPG(imageQuality);
             //Fill total byte length to send. Result is stored in frameBytesLength
-            byteLengthToFrameByteArray(pngBytes.Length, frameBytesLength);
+            ByteLengthToFrameByteArray(pngBytes.Length, frameBytesLength);
 
             //Set readyToGetFrame false
             readyToGetFrame = false;

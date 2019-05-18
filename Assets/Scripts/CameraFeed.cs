@@ -3,7 +3,6 @@ using Vuforia;
 
 public class CameraFeed : MonoBehaviour
 {
-
     private Renderer rend;
     private Vector3 videoTexSize = Vector3.one;
     private Vuforia.Image image;

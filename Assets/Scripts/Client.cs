@@ -48,11 +48,11 @@ public class Client : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         LOGWARNING("Connected!");
-        imageReceiver();
+        ImageReceiver();
     }
 
 
-    void imageReceiver()
+    void ImageReceiver()
     {
         //While loop in another Thread is fine so we don't block main Unity Thread
         Loom.RunAsync(() =>
@@ -60,18 +60,18 @@ public class Client : MonoBehaviour
            while (!stop)
            {
                 //Read Image Count
-                int imageSize = readImageByteSize(SEND_RECEIVE_COUNT);
+                int imageSize = ReadImageByteSize(SEND_RECEIVE_COUNT);
                LOGWARNING("Received Image byte Length: " + imageSize);
 
                 //Read Image Bytes and Display it
-                readFrameByteArray(imageSize);
+                ReadFrameByteArray(imageSize);
            }
        });
     }
 
 
     //Converts the data size to byte array and put result to the fullBytes array
-    void byteLengthToFrameByteArray(int byteLength, byte[] fullBytes)
+    void ByteLengthToFrameByteArray(int byteLength, byte[] fullBytes)
     {
         //Clear old data
         Array.Clear(fullBytes, 0, fullBytes.Length);
@@ -82,7 +82,7 @@ public class Client : MonoBehaviour
     }
 
     //Converts the byte array to the data size and returns the result
-    int frameByteArrayToByteLength(byte[] frameBytesLength)
+    int FrameByteArrayToByteLength(byte[] frameBytesLength)
     {
         int byteLength = BitConverter.ToInt32(frameBytesLength, 0);
         return byteLength;
@@ -90,7 +90,7 @@ public class Client : MonoBehaviour
 
 
     /////////////////////////////////////////////////////Read Image SIZE from Server///////////////////////////////////////////////////
-    private int readImageByteSize(int size)
+    private int ReadImageByteSize(int size)
     {
         bool disconnected = false;
 
@@ -117,14 +117,14 @@ public class Client : MonoBehaviour
         }
         else
         {
-            byteLength = frameByteArrayToByteLength(imageBytesCount);
+            byteLength = FrameByteArrayToByteLength(imageBytesCount);
         }
         imageBytesCount = null;
         return byteLength;
     }
 
     /////////////////////////////////////////////////////Read Image Data Byte Array from Server///////////////////////////////////////////////////
-    private void readFrameByteArray(int size)
+    private void ReadFrameByteArray(int size)
     {
         bool disconnected = false;
 
@@ -151,7 +151,7 @@ public class Client : MonoBehaviour
             //Display Image on the main Thread
             Loom.QueueOnMainThread(() =>
            {
-               displayReceivedImage(imageBytes);
+               DisplayReceivedImage(imageBytes);
                readyToReadAgain = true;
            });
         }
@@ -163,7 +163,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    void displayReceivedImage(byte[] receivedImageBytes)
+    void DisplayReceivedImage(byte[] receivedImageBytes)
     {
         tex.LoadImage(receivedImageBytes);
         image.texture = tex;

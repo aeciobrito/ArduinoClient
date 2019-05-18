@@ -6,13 +6,11 @@ public class InputBehavior : MonoBehaviour
 {
     private bool anyKeyDown = false;
 
-#if UNITY_EDITOR || UNITY_STANDALONE
     void Update()
     {
         KeyInputs();
         JoystickInput();        
     }
-#endif
 
     public void KeyInputs()
     {
@@ -74,8 +72,5 @@ public class InputBehavior : MonoBehaviour
             Debug.Log("Right");
         else if (x < inputValue && y == 0)
             Debug.Log("Left");
-
-        //Debug.Log(x);
-        //Debug.Log(y);
     }
 }

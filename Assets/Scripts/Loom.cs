@@ -100,9 +100,7 @@ public class Loom : MonoBehaviour
         {
             Interlocked.Decrement(ref numThreads);
         }
-
     }
-
 
     void OnDisable()
     {
