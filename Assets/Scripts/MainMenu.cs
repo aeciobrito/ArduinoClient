@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     {
         _mainMenu.SetActive(true);
         _clientMenu.SetActive(false);
-        _clientMenu.SetActive(false);
+        _serverMenu.SetActive(false);
 
         _currentMenu = _mainMenu;
     }

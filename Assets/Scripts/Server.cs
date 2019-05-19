@@ -16,11 +16,11 @@ public class Server : MonoBehaviour
 
     private Texture2D currentTexture;
     private TcpListener listner;
-    private const int port = 1999;
+    [SerializeField] int port = 0;
     private bool stop = false;
     private IPAddress myIP;
     [Range(1,100)]
-    [SerializeField] int imageQuality = 50;
+    [SerializeField] int imageQuality;
     [SerializeField] Text ipText;
 
     private List<TcpClient> clients = new List<TcpClient>();
@@ -32,8 +32,11 @@ public class Server : MonoBehaviour
     {
         Application.runInBackground = true;
         ipText.text = GetLocalIPAddress();
-        imageQuality = PlayerPrefs.GetInt("CamQyalitty", 50);
-        Debug.Log(GetLocalIPAddress());
+        port = PlayerPrefs.GetInt("CameraServerPort", 8080);
+        Debug.Log(port);
+        imageQuality = PlayerPrefs.GetInt("CamQuality");
+        Debug.Log(imageQuality);
+
         //Start WebCam coroutine
         StartCoroutine(InitAndWaitForCamImage());
     }

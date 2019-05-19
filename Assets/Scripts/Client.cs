@@ -11,7 +11,7 @@ public class Client : MonoBehaviour
     public RawImage image;
     public bool enableLog = false;
 
-    const int port = 1999;
+    [SerializeField] int port = 0;
     [SerializeField] string phoneIP = "";//mobile phone IPaddress
     TcpClient client;
 
@@ -28,6 +28,7 @@ public class Client : MonoBehaviour
         Application.runInBackground = true;
 
         phoneIP = PlayerPrefs.GetString("IPCam");
+        port = PlayerPrefs.GetInt("PortCam");
 
 
         tex = new Texture2D(0, 0);
@@ -100,7 +101,6 @@ public class Client : MonoBehaviour
         do
         {
             var read = serverStream.Read(imageBytesCount, total, size - total);
-            //Debug.LogFormat("Client recieved {0} bytes", total);
             if (read == 0)
             {
                 disconnected = true;
@@ -134,7 +134,6 @@ public class Client : MonoBehaviour
         do
         {
             var read = serverStream.Read(imageBytes, total, size - total);
-            //Debug.LogFormat("Client recieved {0} bytes", total);
             if (read == 0)
             {
                 disconnected = true;
