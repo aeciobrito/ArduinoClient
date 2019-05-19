@@ -49,28 +49,28 @@ public class InputBehavior : MonoBehaviour
 
     public void JoystickInput()
     {
-        float x, y, inputValue = 0.1f;
+        float x, y, inputValue = 0f;
 
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
         if (x == 0 && y == 0)
-            Debug.Log("Stop");
+            SendInputs.Instance.SendPacket("S");
         else if (x == 0 && y > inputValue)
-            Debug.Log("Foward");
+            SendInputs.Instance.SendPacket("W");
         else if (x > inputValue && y > inputValue)
-            Debug.Log("FowardRight");
+            SendInputs.Instance.SendPacket("E");
         else if (x < -inputValue && y > inputValue)
-            Debug.Log("FowardLeft");
+            SendInputs.Instance.SendPacket("Q");
         else if (x == 0 && y < -inputValue)
-            Debug.Log("Backward");
+            SendInputs.Instance.SendPacket("X");
         else if (x > inputValue && y < -inputValue)
-            Debug.Log("BackwardRight");
+            SendInputs.Instance.SendPacket("C");
         else if (x < -inputValue && y < -inputValue)
-            Debug.Log("BackwardLeft");
+            SendInputs.Instance.SendPacket("Z");
         else if (x > inputValue && y == 0)
-            Debug.Log("Right");
+            SendInputs.Instance.SendPacket("D");
         else if (x < inputValue && y == 0)
-            Debug.Log("Left");
+            SendInputs.Instance.SendPacket("A");        
     }
 }
