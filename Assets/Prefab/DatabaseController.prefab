@@ -9,45 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1797593293159290}
+  m_RootGameObject: {fileID: 1774655105868944}
   m_IsPrefabAsset: 1
---- !u!1 &1797593293159290
+--- !u!1 &1774655105868944
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4409488455847572}
-  - component: {fileID: 114776251477475488}
+  - component: {fileID: 4802156003264570}
+  - component: {fileID: 114804651359981382}
   m_Layer: 0
-  m_Name: ApplicationController
+  m_Name: DatabaseController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4409488455847572
+--- !u!4 &4802156003264570
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1797593293159290}
+  m_GameObject: {fileID: 1774655105868944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.638866, y: -17.330591, z: 110.5625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114776251477475488
+--- !u!114 &114804651359981382
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1797593293159290}
+  m_GameObject: {fileID: 1774655105868944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5525663ca642f47b214dd02d78b331, type: 3}
+  m_Script: {fileID: 11500000, guid: 52b490f7b8a2a9f40b0397f454be9a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _carIpInputFiled: {fileID: 0}
+  _carPortInputField: {fileID: 0}
+  _cameraInputField: {fileID: 0}
+  _cameraPortInputField: {fileID: 0}
+  _cameraServerPort: {fileID: 0}
+  _qualitySlider: {fileID: 0}

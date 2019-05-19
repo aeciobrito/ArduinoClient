@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 231089144}
   - component: {fileID: 1094939409}
   m_Layer: 5
-  m_Name: IFPort
+  m_Name: CarPort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ RectTransform:
   m_GameObject: {fileID: 241684170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9997403, y: 0.9997403, z: 0.9997403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 946752304}
   m_Father: {fileID: 356988270}
@@ -693,8 +693,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769743335}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 986403555}
+        m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 647185372}
+        m_MethodName: LoadNewScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -962,7 +973,7 @@ GameObject:
   - component: {fileID: 437975716}
   - component: {fileID: 2096648038}
   m_Layer: 5
-  m_Name: IFIP
+  m_Name: CarIP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,6 +1186,12 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 20778089712441780, guid: 831b3006d2962f04a8a7b6530d677ce8,
     type: 2}
   m_PrefabInternal: {fileID: 1709272575}
+--- !u!114 &647185372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114776251477475488, guid: f0d0739c0a51c4e41ac69b61c2497037,
+    type: 2}
+  m_PrefabInternal: {fileID: 1230914096}
+  m_Script: {fileID: 11500000, guid: 8d5525663ca642f47b214dd02d78b331, type: 3}
 --- !u!1 &664576979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,8 +2305,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769743335}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 986403555}
+        m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: VuforiaCamera
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 647185372}
+        m_MethodName: LoadNewScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2335,6 +2363,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 980713559}
   m_CullTransparentMesh: 0
+--- !u!114 &986403555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+    type: 2}
+  m_PrefabInternal: {fileID: 1420175607}
+  m_Script: {fileID: 11500000, guid: 52b490f7b8a2a9f40b0397f454be9a3b, type: 3}
 --- !u!1 &1022649195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2568,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769743335}
+      - m_Target: {fileID: 647185372}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -2803,6 +2837,52 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1106156158}
   m_CullTransparentMesh: 0
+--- !u!1001 &1230914096
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409488455847572, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797593293159290, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+      propertyPath: m_Name
+      value: ApplicationController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0d0739c0a51c4e41ac69b61c2497037, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1312495117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3358,78 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1420000853}
   m_CullTransparentMesh: 0
+--- !u!1001 &1420175607
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.638866
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -17.330591
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 110.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802156003264570, guid: 619a256e6d143e146af764cd01760464, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _carIpInputFiled
+      value: 
+      objectReference: {fileID: 2096648038}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _carPortInputField
+      value: 
+      objectReference: {fileID: 1094939409}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _cameraInputField
+      value: 
+      objectReference: {fileID: 1484262222}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _cameraPortInputField
+      value: 
+      objectReference: {fileID: 1391803628}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _cameraServerPort
+      value: 
+      objectReference: {fileID: 917916476}
+    - target: {fileID: 114804651359981382, guid: 619a256e6d143e146af764cd01760464,
+        type: 2}
+      propertyPath: _qualitySlider
+      value: 
+      objectReference: {fileID: 1809517452}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 619a256e6d143e146af764cd01760464, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1426355111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,12 +4195,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &1769743335 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-    type: 2}
-  m_PrefabInternal: {fileID: 2011513184}
-  m_Script: {fileID: 11500000, guid: 52b490f7b8a2a9f40b0397f454be9a3b, type: 3}
 --- !u!1 &1809517450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,103 +4435,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1932607152}
   m_CullTransparentMesh: 0
---- !u!1001 &2011513184
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4495592604773432, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: ipInputFiled
-      value: 
-      objectReference: {fileID: 2096648038}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: portInputField
-      value: 
-      objectReference: {fileID: 1094939409}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _cameraInputField
-      value: 
-      objectReference: {fileID: 1484262222}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: qualitySlider
-      value: 
-      objectReference: {fileID: 1809517452}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _ipInputFiled
-      value: 
-      objectReference: {fileID: 2096648038}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _portInputField
-      value: 
-      objectReference: {fileID: 1094939409}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _qualitySlider
-      value: 
-      objectReference: {fileID: 1809517452}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _cameraPortInputField
-      value: 
-      objectReference: {fileID: 1391803628}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _carIpInputFiled
-      value: 
-      objectReference: {fileID: 2096648038}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _carPortInputField
-      value: 
-      objectReference: {fileID: 1094939409}
-    - target: {fileID: 114053371665793002, guid: e81759b58e464fa4096004e63b4da362,
-        type: 2}
-      propertyPath: _cameraServerPort
-      value: 
-      objectReference: {fileID: 917916476}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e81759b58e464fa4096004e63b4da362, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &2019477865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,8 +4552,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1769743335}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 986403555}
+        m_MethodName: SaveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Controller
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 647185372}
+        m_MethodName: LoadNewScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

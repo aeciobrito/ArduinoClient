@@ -38,8 +38,7 @@ public class CameraFeed : MonoBehaviour
     #region PRIVATE_METHODS
 
     void OnVuforiaStarted()
-    {
-
+    {        
         // Try register camera image format
         if (CameraDevice.Instance.SetFrameFormat(mPixelFormat, true))
         {
