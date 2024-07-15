@@ -14,8 +14,8 @@ int speed_Coeff = 3; //aux reduce turn speed
 #define IN_3  2           // L298N in3 motors Left            GPIO2(D4)
 #define IN_4  0           // L298N in4 motors Left            GPIO0(D3)
 
-const char* ssid = "Vivo";
-const char* password = "d4c3b21a";
+const char* ssid = "YOUR_WIFI";
+const char* password = "YOUR_KEY";
 
 WiFiUDP Udp;
 unsigned int localUdpPort = 1987;  // local port to listen on
