@@ -25,8 +25,8 @@
 #define LED_GPIO_NUM      2 
 
 // ================= CONFIGURAÇÕES DE REDE =================
-const char* ssid = "NOME_WIFI";
-const char* password = "SENHA_WIFI";
+const char* ssid = "SUA_WIFI";
+const char* password = "SUA_SENHA";
 const int UDP_PORT = 4210;
 
 // ================= NOVA PINAGEM MOTORES (Lado Direito) =================
@@ -39,7 +39,7 @@ const int IN4 = 41;
 // ================= NOVA PINAGEM SERVOS =================
 // IO2 e IO1 estão disponíveis no header
 const int PIN_SERVO_PAN = 1;  
-const int PIN_SERVO_TILT = 2; 
+const int PIN_SERVO_TILT = 42; 
 
 Servo panServo;
 Servo tiltServo;
